@@ -450,6 +450,59 @@
     background: var(--primary);
 }
 
+/***  form style***/
+/* .container-form{
+    display: flex;
+    text-align: center;
+    background-color: red;
+    margin: 20px;
+} */
+
+.main{
+    padding: 20px;
+    font-family: Arial;
+    box-shadow: 5px 5px 7px 5px #888;
+    background-color: red;
+    text-align: center;
+    height: 500px;
+    width: 500px;
+    margin: 80px 40px 80px 290px;
+
+}
+
+.form{
+    /* padding: 19px; */
+    margin: 19px;
+}
+input{
+    padding: 15px;
+    width: 400px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+#button{
+    background-color: green;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* form style end **/
 
 /*** Footer ***/
 .footer .btn.btn-link {
