@@ -538,7 +538,7 @@ input{
 }
 
 .footer .copyright a {
-    color: var(--light);
+    color: #6c6767;
 }
 
 .footer .copyright a:hover {
