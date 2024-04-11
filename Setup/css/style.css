@@ -598,7 +598,8 @@ body {
     width: 200px;
     height: 150px;
     object-fit: cover;
-    border-radius: 4px 0 0 4px;
+    border-radius: 6px 6px 6px 6px;
+    margin-top: 40px;
   }
   
   .content {
