@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video list2</title>
+</head>
+<!--custom css file link-->
+<link rel="stylesheet" href="style2.css">
+<body>
+<h3 class ="heading">Course lectures</h3>
+        <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <video src="2.1.mp4" controls muted></video>
+                <h3 class="title">0.1 Introduction</h3>
+                <h7>Description Box</h7><br>
+                <input type="text" title="Decription Box"></input><br>
+                <h7>Add doubt</h7><br>
+                <input type="text" title=" Add doubt"></input>
+            </div>  
+        </div>
+        <div class="video-list">
+            <div class="vid active">
+                <video src="2.1.mp4"controls muted></video>
+                <h3 class="title">0.1 Introduction to HTML</h3>
+            </div>
+            <div class="vid">
+                <video src="2.2.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 02 - Creating the first web page</h3>
+            </div>
+            <div class="vid">
+                <video src="2.3.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 03 - Line breaks, spacing, and comments</h3>
+            </div>
+            <div class="vid">
+                <video src="2.4.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 04 - Ordered and Unordered lists</h3>
+            </div>
+            <div class="vid">
+                <video src="2.5.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 05 - Creating a table</h3>
+            </div>
+            <div class="vid">
+                <video src="2.6.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 06 - Creating a web link</h3>
+            </div>
+            <div class="vid">
+                <video src="2.7.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 07 - Adding a image to a web page</h3>
+            </div>
+            <div class="vid">
+                <video src="2.8.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 08 - Resizing and sizing images</h3>
+            </div>
+            <div class="vid">
+                <video src="2.9.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 09 - Nested elements</h3>
+            </div>
+            <div class="vid">
+                <video src="2.10.mp4" controls muted ></video>
+                <h3 class="title">HTML Tutorial for Beginners - 10 - One-line text box</h3>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        let listvideo = document.querySelectorAll('.video-list .vid');
+        let mainvideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
+
+        listvideo. forEach(video => {
+            video.onclick =()=>{
+            listvideo.forEach(vid =>  vid.classList.remove('active'));
+            video.classList.add('active');
+            if(video.classList.contains('active')){
+                let src = video.children[0].getAttribute('src');
+                mainvideo.src = src;
+                let text= video.children[1].innerHTML;
+                 title.innerHTML = text;
+            }
+        };
+    });
+    </script>
+    <!--Lecture page Ends-->
+</body>
+</html>
