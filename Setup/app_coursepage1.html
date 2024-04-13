@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video list</title>
+</head>
+<!--custom css file link-->
+<link rel="stylesheet" href="style2.css">
+<body>
+<h3 class ="heading">100 Days Of APP development - 2024 Bootcamp</h3>
+        <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <video src="app-video-1.mp4" controls muted></video>
+                <h3 class="title">0.1 Introduction to Android development</h3>
+                <h7>Description Box</h7><br>
+                <input type="text" title="Decription Box"></input><br>
+                <h7>Add doubt</h7><br>
+                <input type="text" title=" Add doubt"></input>
+            </div>  
+        </div>
+        <div class="video-list">
+            <div class="vid active">
+                <video src="app-video-1.mp4"controls muted></video>
+                <h3 class="title">0.1 Introduction to Android development</h3>
+            </div>
+            <div class="vid">
+                <video src="app-video-2.mp4" controls muted ></video>
+                <h3 class="title">0.2 Android development Histroy</h3>
+            </div>
+            <div class="vid">
+                <video src="3.mp4" controls muted ></video>
+                <h3 class="title">0.3 variables in javascript</h3>
+            </div>
+            <div class="vid">
+                <video src="4.mp4" controls muted ></video>
+                <h3 class="title">0.4 const,let and var in javascript</h3>
+            </div>
+            <div class="vid">
+                <video src="5.mp4" controls muted ></video>
+                <h3 class="title">0.5 Primitives and Object in javascript</h3>
+            </div>
+            <div class="vid">
+                <video src="6.mp4" controls muted ></video>
+                <h3 class="title">0.6 Introduction to Array in javascript</h3>
+            </div>
+            <div class="vid">
+                <video src="7.mp4" controls muted ></video>
+                <h3 class="title">0.7 Array methods in  javascript</h3>
+            </div>
+            <div class="vid">
+                <video src="8.mp4" controls muted ></video>
+                <h3 class="title">0.8 DOM BOM and Windows object in javascript</h3>
+            </div>
+            <div class="vid">
+                <video src="9.mp4" controls muted ></video>
+                <h3 class="title">0.9 Parent Siblings of An Element in javascript</h3>
+            </div>
+            <div class="vid">
+                <video src="10.mp4" controls muted ></video>
+                <h3 class="title">0.10 Accessing Children of An Element </h3>
+            </div>
+        </div>
+        <a href="index.html" class="nav-item nav-link active">Back to Home Page</a>
+    </div>
+    <script>
+        let listvideo = document.querySelectorAll('.video-list .vid');
+        let mainvideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
+
+        listvideo. forEach(video => {
+            video.onclick =()=>{
+            listvideo.forEach(vid =>  vid.classList.remove('active'));
+            video.classList.add('active');
+            if(video.classList.contains('active')){
+                let src = video.children[0].getAttribute('src');
+                mainvideo.src = src;
+                let text= video.children[1].innerHTML;
+                 title.innerHTML = text;
+            }
+        };
+    });
+    </script>
+    <!--Lecture page Ends-->
+</body>
+</html>
