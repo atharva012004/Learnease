@@ -115,13 +115,13 @@
       </div>
   </div>
 </div>
-<!-- Brand & Contact End -->
+<!-- Brand & Contact End   name="submit-to-google-sheet"             // action="signup.php" method="post"-->
 
   
   <main>
     <section class="signup">
       <h2>Sign Up</h2>
-      <form action="signup.php" method="post">
+      <form name="submit-to-google-sheet">
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required placeholder="Enter your full name">
         <label for="email">Email:</label>
@@ -129,7 +129,8 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required placeholder="Create password">
         <p class="password-info">Between 8 and 72 characters</p>
-        <button type="submit">Join for Free</button>
+        <button type="submit">Join for Free</button> <br>
+        <span id="success"></span>
       </form>
       <p>or</p>
       <div class="social-buttons">
@@ -228,6 +229,29 @@
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+
+<!-- JavaScript for form data  is start  -->
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx2hVZYpRB9g2E7W2Nd9FivYIpxdxD1mPG34ZnVhICojICZuETrEBCHjhjbXa7Ax5zo2g/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const success = document.getElementById("success");
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            success.innerHTML="data successfully submited" ;
+
+            setTimeout(function(){
+                success.innerHTML="";
+            },6000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+  <!-- JavaScript for form data  is end -->
 </body>
 
 </html>
