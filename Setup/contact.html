@@ -168,7 +168,7 @@
         <div class="row g-0 justify-content-center">
             <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
                 <p class="text-center mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                <form>
+                <form name="submit-to-google-sheet">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
@@ -196,6 +196,7 @@
                         </div>
                         <div class="col-12 text-center">
                             <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                            <span id="success1"></span>
                         </div>
                     </div>
                 </form>
@@ -294,6 +295,28 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- JavaScript for form data  is start  -->
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx2hVZYpRB9g2E7W2Nd9FivYIpxdxD1mPG34ZnVhICojICZuETrEBCHjhjbXa7Ax5zo2g/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const success1 = document.getElementById("success1");
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            success1.innerHTML="data successfully submited or added" ;
+
+            setTimeout(function(){
+                success1.innerHTML="";
+            },6000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+  <!-- JavaScript for form data  is end -->
 </body>
 
 </html>
