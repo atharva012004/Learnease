@@ -173,7 +173,8 @@ input{
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    height:520px;
+    overflow-y:scroll;
   }
   
   .container .video-list::-webkit-scrollbar {
