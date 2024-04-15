@@ -480,6 +480,15 @@ input{
     font-size: 15px;
     border-radius: 15px;
 }
+.input1 {
+    padding: 15px;
+    width: 789px;
+    height: 139px;
+    font-size: 15px;
+    border-radius: 15px;
+} 
+
+
 #button{
     background-color: green;
     color: black;
