@@ -242,4 +242,10 @@ input{
   h7.mb-4, h7 {
     display: none;
   }
+
+  .social-links
+  {
+    padding-right: 20px;
+    font-size: 20px;
+  }
     
